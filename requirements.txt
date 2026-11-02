@@ -9,5 +9,5 @@ matplotlib==3.10.0
 scikit-learn==1.6.1
 xgboost==3.0.0
 shap==0.47.2
-joblib==1.4.2
+joblib==1.6.0
 Pillow==11.2.1
