@@ -1,3 +1,5 @@
+<a href="https://github.com/krishujeniya/stress-level-prediction/actions/workflows/ci.yml"><img src="https://github.com/krishujeniya/stress-level-prediction/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+
 # Stress Level Prediction
 
 A high-performance, five-class physiological stress classifier trained on biosignals captured during sleep. This project features a premium, glassmorphic Streamlit dashboard tailored for AI engineers, complete with advanced model diagnostics and SHAP explainability.
