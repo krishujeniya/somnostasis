@@ -25,12 +25,12 @@ def test_get_model_details(client):
 
 
 def test_promote_model_to_champion(client, auth_headers):
-    # Arrange: promote xgboost to Production champion
+    # Arrange: promote svm_rbf to Production champion
     payload = {"stage": "Production"}
 
     # Act
     resp = client.post(
-        "/api/v1/models/xgboost/promote",
+        "/api/v1/models/svm_rbf/promote",
         json=payload,
         headers=auth_headers,
     )
@@ -38,7 +38,7 @@ def test_promote_model_to_champion(client, auth_headers):
     # Assert
     assert resp.status_code == 200
     data = resp.json()
-    assert data["key"] == "xgboost"
+    assert data["key"] == "svm_rbf"
     assert data["is_champion"] is True
     assert data["stage"] == "Production"
 

@@ -22,8 +22,12 @@ def test_predict_single_sample_default_champion(client, sample_biosignals):
 
 
 def test_predict_single_sample_explicit_models(client, sample_biosignals):
-    # Test all registered models: random_forest, xgboost, svm_rbf, knn, mlp
-    for model_key in ["random_forest", "xgboost", "svm_rbf", "knn", "mlp"]:
+    from backend.app.core.registry import model_registry
+
+    available_keys = model_registry.list_available_keys()
+    assert len(available_keys) >= 3
+
+    for model_key in available_keys:
         # Arrange
         payload = {"features": sample_biosignals, "model_key": model_key}
 

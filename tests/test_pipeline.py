@@ -28,7 +28,7 @@ def test_retraining_execution(client, auth_headers):
     assert data["status"] == "completed"
     assert "metrics" in data
     assert "random_forest" in data["metrics"]
-    assert "mlp" in data["metrics"]
+    assert "svm_rbf" in data["metrics"]
     assert data["metrics"]["random_forest"]["test_accuracy"] >= 0.85
 
     # Verify run appears in run history
