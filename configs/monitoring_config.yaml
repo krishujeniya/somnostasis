@@ -1,0 +1,15 @@
+# MLOps Monitoring & Drift Detection Configurations
+drift:
+  ks_test:
+    alpha: 0.05
+    description: "Two-sample Kolmogorov-Smirnov test significance threshold"
+  psi:
+    num_bins: 10
+    warning_threshold: 0.10
+    alert_threshold: 0.25
+    description: "Population Stability Index threshold for distribution drift"
+  alert_minimum_drifting_features: 2
+  sample_window_size: 100
+telemetry:
+  latency_percentiles: [50, 95, 99]
+  log_retention_days: 90

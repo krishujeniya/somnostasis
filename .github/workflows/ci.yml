@@ -1,4 +1,4 @@
-name: CI
+name: Continuous Integration & Quality Ratchet
 
 on:
   push:
@@ -7,14 +7,38 @@ on:
     branches: [main]
 
 jobs:
-  validate:
+  verify:
+    name: Backend Tests & Frontend Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
-      - name: Validate Syntax & App Code
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
         run: |
-          python -m compileall .
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest httpx pytest-asyncio pytest-cov
+
+      - name: Validate Python Syntax
+        run: python -m compileall .
+
+      - name: Execute Pytest Suite with Coverage
+        run: |
+          PYTHONPATH=. pytest tests/ -v --cov=backend/app --cov-report=term-missing
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify Frontend Build
+        run: |
+          cd frontend
+          npm install
+          npm run build

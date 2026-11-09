@@ -6,3 +6,10 @@ __pycache__/
 dist/
 build/
 .ipynb_checkpoints/
+.pytest_cache/
+.coverage
+*.db
+frontend/node_modules/
+reports/figures/*.png
+.vercel
+.env*

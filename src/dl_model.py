@@ -9,13 +9,25 @@ Training: Adam + CosineAnnealing + EarlyStopping (patience=25)
 """
 
 import numpy as np
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader, TensorDataset
+
+try:
+    import torch
+    import torch.nn as nn
+    import torch.optim as optim
+    from torch.utils.data import DataLoader, TensorDataset
+    TORCH_AVAILABLE = True
+except ImportError:
+    torch = None
+    nn = None
+    optim = None
+    DataLoader = None
+    TensorDataset = None
+    TORCH_AVAILABLE = False
+
+_BaseModule = nn.Module if TORCH_AVAILABLE and nn is not None else object
 
 
-class StressMLP(nn.Module):
+class StressMLP(_BaseModule):
     def __init__(
         self,
         input_dim: int = 8,
@@ -24,6 +36,8 @@ class StressMLP(nn.Module):
         output_dim: int = 5,
         dropout: float = 0.3,
     ):
+        if not TORCH_AVAILABLE:
+            raise RuntimeError("PyTorch is not installed in this environment.")
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(input_dim, hidden1),
@@ -37,7 +51,7 @@ class StressMLP(nn.Module):
             nn.Linear(hidden2, output_dim),
         )
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x):
         return self.net(x)
 
 

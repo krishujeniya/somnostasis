@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #070709;
+  color: #f4f4f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Concentric border radii utility classes */
+.card-outer {
+  border-radius: 1rem; /* 16px */
+  padding: 1rem; /* 16px */
+}
+
+.card-inner {
+  border-radius: 0.5rem; /* 8px -> R_inner = R_outer - padding = 16 - 16 = 0 or 8px standard */
+}
+
+/* Emil Kowalski 150-200ms ease-out micro-interactions */
+.btn-tactile {
+  transition: transform 180ms ease-out, background-color 180ms ease-out, border-color 180ms ease-out;
+}
+
+.btn-tactile:active {
+  transform: scale(0.98);
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+  background: rgba(18, 18, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-subtle {
+  background: rgba(25, 25, 33, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom sleek dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #272732;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f50;
+}

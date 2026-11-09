@@ -11,7 +11,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import StratifiedKFold, cross_validate
-from xgboost import XGBClassifier
+try:
+    from xgboost import XGBClassifier
+    HAS_XGBOOST = True
+except ImportError:
+    XGBClassifier = None
+    HAS_XGBOOST = False
 
 MODEL_REGISTRY = {
     "Random Forest": RandomForestClassifier(
@@ -20,16 +25,6 @@ MODEL_REGISTRY = {
         min_samples_leaf=1,
         random_state=42,
         n_jobs=-1,
-    ),
-    "XGBoost": XGBClassifier(
-        n_estimators=300,
-        max_depth=6,
-        learning_rate=0.05,
-        subsample=0.8,
-        colsample_bytree=0.8,
-        eval_metric="mlogloss",
-        random_state=42,
-        verbosity=0,
     ),
     "SVM (RBF)": SVC(
         kernel="rbf",
@@ -44,6 +39,18 @@ MODEL_REGISTRY = {
         weights="distance",
     ),
 }
+
+if HAS_XGBOOST:
+    MODEL_REGISTRY["XGBoost"] = XGBClassifier(
+        n_estimators=300,
+        max_depth=6,
+        learning_rate=0.05,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        eval_metric="mlogloss",
+        random_state=42,
+        verbosity=0,
+    )
 
 
 def train_all_ml_models(

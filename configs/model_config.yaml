@@ -1,0 +1,37 @@
+# Machine Learning Model Configurations & Hyperparameters
+random_forest:
+  n_estimators: 300
+  max_depth: null
+  min_samples_leaf: 1
+  random_state: 42
+  n_jobs: -1
+
+xgboost:
+  n_estimators: 300
+  max_depth: 6
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  eval_metric: "mlogloss"
+  random_state: 42
+
+svm_rbf:
+  kernel: "rbf"
+  C: 10.0
+  gamma: "scale"
+  probability: true
+  random_state: 42
+
+knn:
+  n_neighbors: 3
+  metric: "euclidean"
+  weights: "distance"
+
+mlp:
+  hidden1: 64
+  hidden2: 32
+  dropout: 0.3
+  epochs: 300
+  lr: 0.001
+  batch_size: 32
+  patience: 25

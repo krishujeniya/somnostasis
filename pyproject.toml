@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stress-level-prediction"
+version = "1.0.0"
+description = "Enterprise MLOps platform for physiological sleep stress prediction with continuous drift monitoring and model governance."
+readme = "README.md"
+authors = [{ name = "StressGuard MLOps Team" }]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2.3",
+    "numpy>=2.2.0",
+    "scikit-learn>=1.6.0",
+    "shap>=0.47.0",
+    "joblib>=1.4.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "sqlalchemy>=2.0.0",
+    "python-multipart>=0.0.20",
+    "python-jose[cryptography]>=3.3.0",
+    "bcrypt>=4.0.0",
+    "scipy>=1.14.0",
+]
+
+[project.optional-dependencies]
+xgboost = [
+    "xgboost>=3.0.0",
+]
+dl = [
+    "torch>=2.6.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.28.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+]
