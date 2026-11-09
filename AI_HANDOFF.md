@@ -8,6 +8,14 @@
 - **API Documentation**: `https://somnostasis.vercel.app/docs`
 
 ## Status & Verified Gates
+4. **Somnostasis workspace redesign (2026-11-09)**:
+   - Reworked the existing React workspace with a product-specific sleep biosignal heading, clearer champion context, restrained jade/amber status colors, and a keyboard skip link.
+   - Removed unsupported fallback telemetry values and the unverified service availability claim; missing API values now display as unavailable.
+   - Commit: `4ef76bc` (`feat(frontend): redesign Somnostasis workspace`).
+   - Local frontend production build passed. Local Python tests were unavailable because pytest is not installed in the host environment.
+   - GitHub Actions CI run `42568578334` passed, including Python tests and frontend build. GitHub Pages deployment run `42568578395` passed.
+   - Browser viewport and keyboard review were not completed; review the deployed workspace at the next UI checkpoint.
+   - Next command: `gh run list --repo krishujeniya/somnostasis --branch main --limit 5`
 1. **Legacy Decommissioning**:
    - `stress-level-prediction` Vercel project permanently removed via Vercel CLI.
    - All references to old project names purged across code, manifests, and documentation.
