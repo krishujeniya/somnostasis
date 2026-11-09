@@ -4,15 +4,53 @@
 
 :root {
   color-scheme: dark;
+  --night: #101816;
+  --night-raised: #18221f;
+  --night-soft: #202d29;
+  --paper: #edf1e9;
+  --quiet: #a7b4ac;
+  --jade: #9dc4a9;
+  --amber: #d7b17a;
+  --hairline: rgba(226, 237, 229, .12);
 }
 
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #070709;
-  color: #f4f4f5;
+  background-color: var(--night);
+  color: var(--paper);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+body, button, input, select { font-family: Inter, system-ui, -apple-system, sans-serif; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--jade); outline-offset: 3px; }
+.app-shell { background: radial-gradient(ellipse at 82% 0%, rgba(71, 100, 81, .14), transparent 31rem), var(--night); }
+.skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; transform: translateY(-150%); padding: .7rem 1rem; border-radius: 999px; background: var(--paper); color: var(--night); }
+.skip-link:focus { transform: none; }
+.workspace-intro { display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; padding:1.4rem 0 1.25rem; }
+.workspace-kicker { margin:0 0 .45rem; color:var(--jade); font:600 .65rem/1.2 ui-monospace,SFMono-Regular,monospace; letter-spacing:.16em; }
+.workspace-intro h1 { margin:0; color:var(--paper); font:400 clamp(1.8rem,3vw,2.7rem)/1.1 Georgia,serif; letter-spacing:-.04em; }
+.workspace-description { max-width:42rem; margin:.65rem 0 0; color:#bac4bd; font-size:.86rem; }
+.workspace-model { display:flex; align-items:center; gap:.55rem; white-space:nowrap; color:var(--quiet); font-size:.72rem; }
+.workspace-model strong { color:var(--paper); text-transform:capitalize; font-weight:550; }
+.model-dot { width:.48rem; height:.48rem; border-radius:50%; background:var(--jade); box-shadow:0 0 0 4px rgba(157,196,169,.12); }
+.glass-panel { background:rgba(21,31,28,.94)!important; border-color:var(--hairline)!important; box-shadow:0 14px 40px rgba(0,0,0,.12); }
+.glass-panel-subtle { background:rgba(24,34,31,.8)!important; border-color:var(--hairline)!important; }
+header.glass-panel { background:rgba(16,24,22,.92)!important; }
+.telemetry-grid article { min-height:92px; border-radius:12px!important; }
+.telemetry-grid article > div:first-child span { color:#b0bcb4!important; }
+.app-footer { color:#9aa89f!important; border-color:var(--hairline)!important; }
+.app-footer::first-line { color:#a7b4ac; }
+::selection { background:rgba(157,196,169,.28); color:#fff; }
+@media (max-width:640px) {
+  .workspace-intro { align-items:flex-start; flex-direction:column; padding-top:1rem; }
+  .workspace-model { flex-wrap:wrap; white-space:normal; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
 }
 
 /* Concentric border radii utility classes */

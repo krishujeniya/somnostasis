@@ -35,10 +35,10 @@ export const App: React.FC = () => {
     loadInitialData();
   }, []);
 
-  const champion = models.find((m) => m.is_champion)?.key || telemetry?.active_champion || 'random_forest';
+  const champion = models.find((m) => m.is_champion)?.key || telemetry?.active_champion || 'Loading';
 
   return (
-    <div className="min-h-screen bg-[#070709] text-zinc-100 flex flex-col font-sans">
+    <div className="app-shell min-h-screen text-zinc-100 flex flex-col font-sans">
       {/* Top Navigation */}
       <Navbar
         activeTab={activeTab}
@@ -47,7 +47,15 @@ export const App: React.FC = () => {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main id="main-content" className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="workspace-intro">
+          <div>
+            <p className="workspace-kicker">SLEEP BIOSIGNAL WORKSPACE</p>
+            <h1>Inference studio</h1>
+            <p className="workspace-description">Explore model predictions from sleep measurements, inspect feature contributions, and review service telemetry.</p>
+          </div>
+          <div className="workspace-model"><span className="model-dot" />Active champion <strong>{champion.replace(/_/g, ' ')}</strong></div>
+        </div>
         {/* Real-time Telemetry KPI Bar */}
         <TelemetryBar telemetry={telemetry} loading={loading} />
 
@@ -86,8 +94,8 @@ export const App: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/[0.04] py-4 text-center text-xs text-zinc-500 font-mono">
-        Somnostasis MLOps SaaS • IEEE TCE SaYoPillow Sleep Biosignals • Production Ready
+      <footer className="app-footer border-t border-white/[0.04] py-4 text-center text-xs text-zinc-500">
+        Somnostasis · Sleep biosignal model workspace · Research and demonstration use
       </footer>
     </div>
   );
