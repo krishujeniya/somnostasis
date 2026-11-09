@@ -77,7 +77,7 @@ export const BatchStudio: React.FC<BatchStudioProps> = ({ models, championKey })
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `stressguard_predictions_${Date.now()}.csv`;
+    a.download = `somnostasis_predictions_${Date.now()}.csv`;
     a.click();
   };
 

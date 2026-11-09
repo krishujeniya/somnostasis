@@ -1,4 +1,4 @@
-# StressGuard MLOps Architecture
+# Somnostasis MLOps Architecture
 
 ```
                   ┌───────────────────────────────────────────┐

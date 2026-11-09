@@ -5,7 +5,7 @@ UVICORN := .venv/bin/uvicorn
 PYTEST := .venv/bin/pytest
 
 help:
-	@echo "StressGuard MLOps SaaS — Automation Tasks"
+	@echo "Somnostasis MLOps Platform — Automation Tasks"
 	@echo "  make setup     - Install Python dependencies and build frontend packages"
 	@echo "  make test      - Run automated pytest suite with coverage analysis"
 	@echo "  make train     - Retrain all machine learning and deep learning models"

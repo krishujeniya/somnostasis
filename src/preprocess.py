@@ -73,7 +73,7 @@ FEATURE_RANGES = {
 
 DATASET_URL = (
     "https://raw.githubusercontent.com/krishujeniya/"
-    "stress-level-prediction/main/data/SaYoPillow.csv"
+    "somnostasis/main/data/SaYoPillow.csv"
 )
 
 

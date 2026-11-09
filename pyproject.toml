@@ -3,11 +3,11 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "stress-level-prediction"
+name = "somnostasis"
 version = "1.0.0"
 description = "Enterprise MLOps platform for physiological sleep stress prediction with continuous drift monitoring and model governance."
 readme = "README.md"
-authors = [{ name = "StressGuard MLOps Team" }]
+authors = [{ name = "Somnostasis Team" }]
 license = { text = "MIT" }
 requires-python = ">=3.11"
 dependencies = [
