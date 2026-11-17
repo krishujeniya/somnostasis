@@ -1,0 +1,34 @@
+# Version control
+.git/
+.gitignore
+.github/
+
+# Python caches and environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node/Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/.turbo/
+
+# Sensitive files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Notebooks and checkpoints
+.ipynb_checkpoints/
+*.ipynb
+
+# OS files
+.DS_Store
