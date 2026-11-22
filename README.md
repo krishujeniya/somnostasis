@@ -7,14 +7,7 @@
 ### Autonomic Biosignal Intelligence & Production MLOps Platform
 
 <p align="left">
-  <a href="https://github.com/krishujeniya/somnostasis/actions/workflows/ci.yml"><img src="https://github.com/krishujeniya/somnostasis/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
-  <a href="https://github.com/krishujeniya/somnostasis/actions/workflows/deploy-pages.yml"><img src="https://github.com/krishujeniya/somnostasis/actions/workflows/deploy-pages.yml/badge.svg" alt="Pages Deployment" /></a>
-  <img src="https://img.shields.io/badge/Python-3.11-3776AB.svg?logo=python&logoColor=white" alt="Python 3.11" />
-  <img src="https://img.shields.io/badge/FastAPI-0.115-009688.svg?logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/React-18.3-61DAFB.svg?logo=react&logoColor=black" alt="React 18" />
-  <img src="https://img.shields.io/badge/TypeScript-5.5-3178C6.svg?logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/TailwindCSS-3.4-38B2AC.svg?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License MIT" />
+  <a href="https://img.shields.io/badge/Cloudflare_Pages-Active-F38020?style=flat-square&logo=cloudflare" alt="License MIT" />
 </p>
 
 ---
@@ -23,9 +16,9 @@
 
 | System Component | Host / Provider | Live URL |
 |---|---|---|
-| **Web Dashboard** | GitHub Pages | [https://krishujeniya.github.io/somnostasis/](https://krishujeniya.github.io/somnostasis/) |
-| **Serverless API** | Vercel | [https://somnostasis.vercel.app](https://somnostasis.vercel.app) |
-| **API Documentation** | Vercel (Swagger UI) | [https://somnostasis.vercel.app/docs](https://somnostasis.vercel.app/docs) |
+| **Web Dashboard** | GitHub Pages | [https://somnostasis.pages.dev](https://somnostasis.pages.dev) |
+| **Serverless API** | Vercel | [https://somnostasis-api.curavex.workers.dev](https://somnostasis-api.curavex.workers.dev) |
+| **API Documentation** | Vercel (Swagger UI) | [https://somnostasis-api.curavex.workers.dev/docs](https://somnostasis-api.curavex.workers.dev/docs) |
 | **Code Repository** | GitHub | [https://github.com/krishujeniya/somnostasis](https://github.com/krishujeniya/somnostasis) |
 
 ---
@@ -306,14 +299,14 @@ vercel --prod --yes
 ```
 
 The production backend will be available at:
-`https://somnostasis.vercel.app`
+`https://somnostasis-api.curavex.workers.dev`
 
 ### Frontend Deployment (GitHub Pages)
 
 The frontend is continuously built and deployed to GitHub Pages via the `.github/workflows/deploy-pages.yml` workflow on every push to `main`.
 
 Live site:
-`https://krishujeniya.github.io/somnostasis/`
+`https://somnostasis.pages.dev`
 
 ---
 

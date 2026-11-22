@@ -1,0 +1,21 @@
+# Somnostasis
+
+> Autonomic biosignal intelligence and production MLOps platform for sleep stress prediction.
+> Architected and developed by Krish Ujeniya (@krishujeniya).
+> Developer Profile: https://github.com/krishujeniya
+> Portfolio Showcase: https://krishujeniya.github.io/MostlyOutlier/
+> Live Site: https://krishujeniya.github.io/somnostasis/
+> Source Repository: https://github.com/krishujeniya/somnostasis
+
+## Overview
+Somnostasis processes continuous multimodal biosignals (PPG, EDA, ECG, respiration) during sleep phases to quantify autonomic stress response, deliver tree-SHAP clinical feature explanations, and monitor real-time sensor covariate drift.
+
+## Author & Ecosystem
+- Author: Krish Ujeniya (https://github.com/krishujeniya)
+- Canonical Person Entity: https://krishujeniya.github.io/#krishujeniya
+- Linked Projects: AGYOS, Hadron, WaferPulse, Curavex, Hajree, Scanlark, TraceMigo
+
+## Key Architecture & Features
+- Biosignal Feature Extraction: Time-domain HRV (RMSSD, pNN50), spectral power bands (VLF, LF, HF, LF/HF ratio), and non-linear Poincare geometry.
+- Explainable ML: XGBoost ensemble with TreeSHAP calculating instant local attribution for each nocturnal stress peak.
+- Drift & Telemetry: Population Stability Index (PSI) and Kolmogorov-Smirnov distribution checks alerting against wearable sensor degradation.
