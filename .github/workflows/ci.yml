@@ -33,7 +33,7 @@ jobs:
           PYTHONPATH=. pytest tests/ -v --cov=backend/app --cov-report=term-missing
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 20
 
