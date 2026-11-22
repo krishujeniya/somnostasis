@@ -11,8 +11,8 @@ import {
   CreatedAPIKey,
 } from '../types';
 
-const VERCEL_API_URL = 'https://somnostasis.vercel.app';
-const API_BASE = (import.meta as any).env?.VITE_API_URL || (typeof window !== 'undefined' && window.location.hostname.includes('github.io') ? `${VERCEL_API_URL}/api/v1` : '/api/v1');
+const PROD_API_URL = 'https://somnostasis-api.curavex.workers.dev';
+const API_BASE = (import.meta as any).env?.VITE_API_URL || (typeof window !== 'undefined' && window.location.hostname.includes('pages.dev') ? `${PROD_API_URL}/api/v1` : '/api/v1');
 
 async function handleResponse<T>(res: Response): Promise<T> {
   if (!res.ok) {

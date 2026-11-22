@@ -17,4 +17,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://krishujeniya.github.io/somnostasis/sitemap.xml
+Sitemap: https://somnostasis.pages.dev/sitemap.xml

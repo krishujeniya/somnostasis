@@ -3,8 +3,8 @@
 > Autonomic biosignal intelligence and production MLOps platform for sleep stress prediction.
 > Architected and developed by Krish Ujeniya (@krishujeniya).
 > Developer Profile: https://github.com/krishujeniya
-> Portfolio Showcase: https://krishujeniya.github.io/MostlyOutlier/
-> Live Site: https://krishujeniya.github.io/somnostasis/
+> Portfolio Showcase: https://mostlyoutlier.pages.dev/
+> Live Site: https://somnostasis.pages.dev/
 > Source Repository: https://github.com/krishujeniya/somnostasis
 
 ## Overview
@@ -12,7 +12,7 @@ Somnostasis processes continuous multimodal biosignals (PPG, EDA, ECG, respirati
 
 ## Author & Ecosystem
 - Author: Krish Ujeniya (https://github.com/krishujeniya)
-- Canonical Person Entity: https://krishujeniya.github.io/#krishujeniya
+- Canonical Person Entity: https://krishujeniya.dev/#krishujeniya
 - Linked Projects: AGYOS, Hadron, WaferPulse, Curavex, Hajree, Scanlark, TraceMigo
 
 ## Key Architecture & Features
