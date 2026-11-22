@@ -11,7 +11,7 @@ import {
   CreatedAPIKey,
 } from '../types';
 
-const PROD_API_URL = 'https://somnostasis-api.curavex.workers.dev';
+const PROD_API_URL = 'https://api.somnostasis.workers.dev';
 const API_BASE = (import.meta as any).env?.VITE_API_URL || (typeof window !== 'undefined' && window.location.hostname.includes('pages.dev') ? `${PROD_API_URL}/api/v1` : '/api/v1');
 
 async function handleResponse<T>(res: Response): Promise<T> {

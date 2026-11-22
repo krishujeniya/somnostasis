@@ -17,8 +17,8 @@
 | System Component | Host / Provider | Live URL |
 |---|---|---|
 | **Web Dashboard** | GitHub Pages | [https://somnostasis.pages.dev](https://somnostasis.pages.dev) |
-| **Serverless API** | Vercel | [https://somnostasis-api.curavex.workers.dev](https://somnostasis-api.curavex.workers.dev) |
-| **API Documentation** | Vercel (Swagger UI) | [https://somnostasis-api.curavex.workers.dev/docs](https://somnostasis-api.curavex.workers.dev/docs) |
+| **Serverless API** | Cloudflare Worker | [https://api.somnostasis.workers.dev](https://api.somnostasis.workers.dev) |
+| **API Documentation** | Cloudflare Worker (Swagger UI) | [https://api.somnostasis.workers.dev/docs](https://api.somnostasis.workers.dev/docs) |
 | **Code Repository** | GitHub | [https://github.com/krishujeniya/somnostasis](https://github.com/krishujeniya/somnostasis) |
 
 ---
@@ -299,7 +299,7 @@ vercel --prod --yes
 ```
 
 The production backend will be available at:
-`https://somnostasis-api.curavex.workers.dev`
+`https://api.somnostasis.workers.dev`
 
 ### Frontend Deployment (GitHub Pages)
 
