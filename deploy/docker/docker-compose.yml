@@ -1,9 +1,13 @@
 services:
   api:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../..
+      dockerfile: deploy/docker/Dockerfile
     container_name: somnostasis_api
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     restart: unless-stopped
     ports:
       - "8000:8000"
@@ -25,9 +29,13 @@ services:
 
   dashboard:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../..
+      dockerfile: deploy/docker/Dockerfile
     container_name: somnostasis_dashboard
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     command: ["streamlit", "run", "app.py", "--server.port", "8501", "--server.address", "0.0.0.0", "--server.headless", "true"]
     restart: unless-stopped
     ports:
